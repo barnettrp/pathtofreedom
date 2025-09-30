@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Path to Freedom Coaching - Reach out for questions, support, or to schedule your free consultation.">
+    <title>Contact - Path to Freedom Coaching</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Path to Freedom</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="app.html">Recovery App</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="index.html#schedule" class="btn-primary">Schedule Session</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Get in Touch</h1>
+            <p class="hero-subtitle">We're here to answer your questions and support you</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2>Send Us a Message</h2>
+                    <p>Have questions about our coaching services, the recovery app, or anything else? We'd love to hear from you.</p>
+                    <p>All inquiries are confidential, and we typically respond within 24 hours.</p>
+                    
+                    <div class="contact-info-grid">
+                        <div class="contact-info-card">
+                            <h3>📧 Email</h3>
+                            <p>info@pathtofreedomcoaching.com</p>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <h3>🕐 Response Time</h3>
+                            <p>Within 24 hours</p>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <h3>🔒 Confidential</h3>
+                            <p>All communications are private</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="intro-image">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="consultation">Schedule Free Consultation</option>
+                                <option value="coaching">Coaching Services Question</option>
+                                <option value="app">Recovery App Question</option>
+                                <option value="payment">Payment/Pricing Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <p class="helper-text">Please share any questions or information that would be helpful for us to know.</p>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                        
+                        <p class="helper-text text-center">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Contact Methods -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Other Ways to Connect</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">📅</div>
+                    <h3>Schedule Directly</h3>
+                    <p>Book your free consultation using our online scheduling system.</p>
+                    <a href="index.html#schedule" class="btn-secondary">View Calendar</a>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with us in real-time during business hours.</p>
+                    <button class="btn-secondary" onclick="alert('Live chat feature coming soon!')">Start Chat</button>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">📱</div>
+                    <h3>Social Media</h3>
+                    <p>Follow us for daily encouragement and insights.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="#" style="margin-right: 1rem;">Facebook</a>
+                        <a href="#" style="margin-right: 1rem;">Instagram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">Quick Answers</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How quickly can I start coaching?</h3>
+                    <p>After your free consultation, we can typically schedule your first coaching session within a week, depending on your availability and our schedule.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my information kept confidential?</h3>
+                    <p>Absolutely. All communications, whether by email, phone, or during coaching sessions, are completely confidential. We take your privacy very seriously.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if I'm not sure coaching is right for me?</h3>
+                    <p>That's exactly what the free consultation is for! It's a no-pressure conversation where we can explore whether our approach is a good fit for your needs.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I contact you in a crisis?</h3>
+                    <p>While we respond to emails within 24 hours, we are not a crisis service. If you're in immediate danger or experiencing a mental health crisis, please call 988 (Suicide Prevention Lifeline) or go to your nearest emergency room.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Hours -->
+    <section class="values-section">
+        <div class="container text-center">
+            <h2 class="section-title">Office Hours</h2>
+            <div class="contact-info-card" style="max-width: 600px; margin: 0 auto;">
+                <h3>⏰ We're Here to Help</h3>
+                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM EST</p>
+                <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM EST</p>
+                <p><strong>Sunday:</strong> Closed</p>
+                <p class="mt-2">Coaching sessions available by appointment outside these hours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prefer to Schedule Directly?</h2>
+            <p>Skip the form and book your free consultation right now</p>
+            <a href="index.html#schedule" class="btn-primary btn-large">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Path to Freedom Coaching</h4>
+                    <p>Grace-based Christian coaching for men seeking freedom from porn and sexual addiction.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="app.html">Recovery App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <p>Crisis Support:</p>
+                    <p>National Suicide Prevention Lifeline: 988</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Path to Freedom Coaching LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
