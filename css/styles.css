@@ -160,6 +160,17 @@ img {
     box-shadow: 0 4px 12px rgba(44, 95, 124, 0.3);
 }
 
+/* Navigation Schedule Session button - lighter for better visibility */
+.nav-menu .btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.nav-menu .btn-primary:hover {
+    background-color: #7ba4b8;
+    color: var(--white);
+}
+
 .btn-secondary {
     background-color: transparent;
     color: var(--primary-color);
