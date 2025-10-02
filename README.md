@@ -33,17 +33,22 @@ This website provides a complete online presence for a Christian coaching practi
 
 ## 🎨 Design Features
 
-### Color Scheme (Masculine but Calming)
-- **Primary Color**: Deep calm blue (#2c5f7c)
-- **Secondary Color**: Lighter blue (#5a8aa0)
-- **Accent Color**: Earthy brown (#8b7355)
-- **Supporting Colors**: Grays and earth tones
+### Color Scheme (Professional & Masculine)
+- **Primary Color**: Deep navy (#1a2332) - Professional and masculine
+- **Secondary Color**: Charcoal blue (#2d3e50)
+- **Accent Color**: Bold amber/gold (#c17817) - Strategic highlights
+- **Accent Light**: Lighter amber (#e69a28) - Interactive elements
+- **Supporting Colors**: Dark grays and neutral tones
 
 ### Key Design Elements
-- Clean, professional layout
-- Smooth transitions and interactions
+- Professional, bold typography with strong visual hierarchy
+- Modern sans-serif fonts throughout for clarity and strength
+- Dramatic hero sections with gradient overlays
+- Clean card-based layouts with subtle shadows
+- Prominent call-to-action buttons with uppercase styling
 - Mobile-first responsive design
 - Accessible and user-friendly navigation
+- Smooth transitions and hover effects
 
 ## 🔧 Setup Instructions
 
