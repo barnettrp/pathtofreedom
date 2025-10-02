@@ -64,13 +64,13 @@ p {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-light);
 }
 
 img {
@@ -298,11 +298,21 @@ section {
 .intro-text h2 {
     color: var(--primary-color);
     margin-bottom: var(--spacing-md);
+    font-size: 2.25rem;
+    font-weight: 800;
 }
 
 .intro-text p {
     color: var(--text-light);
     font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.intro-image img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    height: auto;
 }
 
 .placeholder-image {
@@ -589,15 +599,30 @@ section {
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.25rem;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
     
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
+    .hero {
+        padding: 80px 0 60px;
+        min-height: 450px;
+    }
+    
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .btn-large {
+        padding: 14px 32px;
+        font-size: 0.95rem;
+    }
 }
 
 /* Influences Section */
@@ -610,18 +635,27 @@ section {
 
 .influence-item {
     background-color: var(--white);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     border-left: 4px solid var(--accent-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.influence-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
 }
 
 .influence-item h3 {
     color: var(--primary-color);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
 }
 
 .influence-item p {
     color: var(--text-light);
+    line-height: 1.7;
 }
 
 /* Pricing Section */
@@ -654,7 +688,8 @@ section {
 }
 
 .pricing-card.featured {
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--shadow-md);
 }
 
 .featured-badge {
@@ -663,10 +698,13 @@ section {
     right: 20px;
     background-color: var(--accent-color);
     color: var(--white);
-    padding: 5px 15px;
+    padding: 6px 18px;
     border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: var(--shadow-md);
 }
 
 .pricing-header {
@@ -679,11 +717,15 @@ section {
 .pricing-header h3 {
     color: var(--primary-color);
     margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .price {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
     color: var(--primary-color);
     margin: var(--spacing-sm) 0;
 }
