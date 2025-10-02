@@ -3,12 +3,12 @@
 
 /* CSS Variables for consistent theming */
 :root {
-    --primary-color: #2c5f7c;        /* Deep calm blue */
-    --secondary-color: #5a8aa0;      /* Lighter blue */
-    --accent-color: #8b7355;         /* Earthy brown */
+    --primary-color: #4a90cc;        /* Bright sky blue */
+    --secondary-color: #6bb6ff;      /* Lighter bright blue */
+    --accent-color: #5fb3d3;         /* Light teal blue */
     --dark-gray: #333333;
     --medium-gray: #666666;
-    --light-gray: #f5f5f5;
+    --light-gray: #f8fafc;
     --white: #ffffff;
     --success-color: #4a7c59;
     --text-color: #333333;
@@ -99,6 +99,41 @@ img {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.nav-logo {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+/* Hero Logo */
+.hero-logo {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-logo-img {
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Footer Logo */
+.footer-logo {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-logo-img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    opacity: 0.9;
 }
 
 .nav-menu {
@@ -112,6 +147,9 @@ img {
     color: var(--text-color);
     font-weight: 500;
     padding: var(--spacing-xs) var(--spacing-sm);
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
 }
 
 .nav-menu a:hover,
@@ -157,7 +195,7 @@ img {
     background-color: var(--secondary-color);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(44, 95, 124, 0.3);
+    box-shadow: 0 4px 16px rgba(74, 144, 204, 0.4);
 }
 
 /* Navigation Schedule Session button - lighter for better visibility */
@@ -167,19 +205,24 @@ img {
 }
 
 .nav-menu .btn-primary:hover {
-    background-color: #7ba4b8;
+    background-color: #85c7ff;
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(107, 182, 255, 0.4);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--white);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(74, 144, 204, 0.2);
 }
 
 .btn-secondary:hover {
     background-color: var(--primary-color);
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(74, 144, 204, 0.4);
 }
 
 .btn-large {
