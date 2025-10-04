@@ -6,6 +6,7 @@
     <meta name="description" content="Professional coaching services for porn and sexual addiction recovery. Grace-based approach with flexible options.">
     <title>Services - Path to Freedom Coaching</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -90,7 +91,11 @@
                         <li>✓ Email support between sessions</li>
                         <li>✓ Access to recovery app</li>
                     </ul>
-                    <a href="index.html#schedule" class="btn-primary">Get Started</a>
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1SENnARpBO7AhAVgCYk7N4vV"
+                      publishable-key="pk_live_51SEKFsRpBO7AhAVgCDViuDDXbsj2EZsAND5d7qOje63TT7uCHbqg32jazIlubyJSJBVlzGEPxrLGPVUoS5NYmt6Q00rAA5j299"
+                    >
+                    </stripe-buy-button>
                 </div>
 
                 <!-- Monthly Package -->
@@ -108,7 +113,11 @@
                         <li>✓ Premium recovery app access</li>
                         <li>✓ Save $60 per month</li>
                     </ul>
-                    <a href="index.html#schedule" class="btn-primary">Choose Package</a>
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1SENkRRpBO7AhAVgDizB8eJv"
+                      publishable-key="pk_live_51SEKFsRpBO7AhAVgCDViuDDXbsj2EZsAND5d7qOje63TT7uCHbqg32jazIlubyJSJBVlzGEPxrLGPVUoS5NYmt6Q00rAA5j299"
+                    >
+                    </stripe-buy-button>
                 </div>
             </div>
         </div>
@@ -161,28 +170,6 @@
                 <div class="payment-card">
                     <h3>Secure Payment Processing</h3>
                     <p>We use Stripe for secure payment processing. All major credit cards accepted.</p>
-                    
-                    <!-- Stripe Payment Integration Placeholder -->
-                    <div class="stripe-integration">
-                        <div class="stripe-note">
-                            <p><strong>Stripe Integration Setup:</strong></p>
-                            <ol>
-                                <li>Create a Stripe account at <a href="https://stripe.com" target="_blank">stripe.com</a></li>
-                                <li>Get your publishable key from Stripe Dashboard</li>
-                                <li>Add the Stripe.js library to your website</li>
-                                <li>Configure payment buttons with Stripe Checkout or Payment Links</li>
-                            </ol>
-                            <p>Example payment button code:</p>
-                            <div class="code-block">
-&lt;!-- Stripe Checkout Button --&gt;<br>
-&lt;script async src="https://js.stripe.com/v3/buy-button.js"&gt;&lt;/script&gt;<br>
-&lt;stripe-buy-button<br>
-&nbsp;&nbsp;buy-button-id="buy_btn_xxxxx"<br>
-&nbsp;&nbsp;publishable-key="pk_live_xxxxx"<br>
-&gt;&lt;/stripe-buy-button&gt;
-                            </div>
-                        </div>
-                    </div>
                     
                     <div class="payment-features">
                         <h4>Payment Features:</h4>
