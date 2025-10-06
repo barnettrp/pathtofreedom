@@ -408,7 +408,19 @@ section {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: var(--spacing-md);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .intro-text h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .intro-text h3 {
+        font-size: 1.75rem;
+    }
 }
 
 .intro-text p {
