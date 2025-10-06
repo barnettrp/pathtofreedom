@@ -511,9 +511,26 @@ section {
     gap: var(--spacing-lg);
 }
 
+/* Force 4 columns on desktop for Journey to Freedom section */
+@media (min-width: 1024px) {
+    .how-it-works .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 2 columns on tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .how-it-works .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .step {
     text-align: center;
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .step-number {
