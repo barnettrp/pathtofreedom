@@ -21,19 +21,8 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Verify Firebase Auth token
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ error: 'Unauthorized: Missing authentication token' });
-  }
-
-  try {
-    const token = authHeader.split('Bearer ')[1];
-    await admin.auth().verifyIdToken(token);
-  } catch (error) {
-    console.error('Token verification failed:', error);
-    return res.status(401).json({ error: 'Unauthorized: Invalid authentication token' });
-  }
+  // Note: Authentication removed for public contact form
+  // If you want to add rate limiting, consider using reCAPTCHA or Firebase App Check
 
   // Configure the email transporter using Gmail and App Password
   const transporter = nodemailer.createTransport({

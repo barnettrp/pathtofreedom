@@ -112,17 +112,11 @@ function validateForm(formId) {
             submitButton.textContent = 'Sending...';
 
             try {
-                // Sign in anonymously to get auth token
-                await firebase.auth().signInAnonymously();
-                const user = firebase.auth().currentUser;
-                const token = await user.getIdToken();
-
-                // Call Firebase Cloud Function via HTTP with auth token
+                // Call Firebase Cloud Function via HTTP
                 const response = await fetch('https://us-central1-pathtofreedom-site.cloudfunctions.net/sendContactEmail', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + token
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(formData)
                 });
