@@ -50,7 +50,7 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
   // Create email content
   const mailOptions = {
     from: functions.config().email.user,
-    to: 'info@pathtofreedomcoaching.com', // Your receiving email
+    to: 'info@pathtofreedom.coach', // Your receiving email
     replyTo: email,
     subject: `Contact Form: ${subject}`,
     html: `
@@ -141,7 +141,7 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
       responseCode: error.responseCode
     });
     return res.status(500).json({
-      error: `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedomcoaching.com`
+      error: `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedom.coach`
     });
   }
 });

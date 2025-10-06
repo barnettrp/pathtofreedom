@@ -135,7 +135,7 @@ function validateForm(formId) {
                 // Show detailed error message
                 let errorMessage = 'There was an error sending your message.\n\n';
                 errorMessage += 'Error: ' + (error.message || 'unknown') + '\n';
-                errorMessage += '\nPlease email us directly at info@pathtofreedomcoaching.com';
+                errorMessage += '\nPlease email us directly at info@pathtofreedom.coach';
                 alert(errorMessage);
             } finally {
                 // Re-enable submit button

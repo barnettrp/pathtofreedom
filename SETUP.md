@@ -90,7 +90,7 @@ The contact form needs a backend to work. Choose one option:
 ## Step 5: Add Your Email Address
 
 Search and replace throughout all files:
-- `info@pathtofreedomcoaching.com` → Your actual email address
+- `info@pathtofreedom.coach` → Your actual email address
 - `privacy@pathtofreedomcoaching.com` → Your actual email address
 
 ## Step 6: Update Contact Information

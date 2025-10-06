@@ -85,7 +85,7 @@ If you want to add additional security, you can configure CORS and function secu
 3. Submit the form
 4. Check:
    - The sender's email for a confirmation message
-   - `info@pathtofreedomcoaching.com` for the contact form submission
+   - `info@pathtofreedom.coach` for the contact form submission
 
 ## Local Development (Optional)
 
@@ -131,7 +131,7 @@ if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
 - Verify the Gmail account and App Password are correct
 - Check Firebase Functions logs for errors
 - Make sure "Less secure app access" is OFF (you should use App Password)
-- Verify the receiving email (`info@pathtofreedomcoaching.com`) is correct
+- Verify the receiving email (`info@pathtofreedom.coach`) is correct
 
 ## Files Created
 

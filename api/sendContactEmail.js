@@ -43,7 +43,7 @@ module.exports = async (req, res) => {
   // Create email content
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'info@pathtofreedomcoaching.com',
+    to: 'info@pathtofreedom.coach',
     replyTo: email,
     subject: `Contact Form: ${subject}`,
     html: `
@@ -123,7 +123,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error('Error sending email:', error);
     return res.status(500).json({
-      error: `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedomcoaching.com`
+      error: `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedom.coach`
     });
   }
 };
