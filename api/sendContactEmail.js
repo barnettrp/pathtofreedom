@@ -1,29 +1,22 @@
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
 
-admin.initializeApp();
-
-// Cloud Function to send contact form emails (using HTTP request)
-exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
-  // Enable CORS for all origins
-  res.set('Access-Control-Allow-Origin', '*');
+module.exports = async (req, res) => {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    res.set('Access-Control-Allow-Methods', 'POST');
-    res.set('Access-Control-Allow-Headers', 'Content-Type');
-    res.set('Access-Control-Max-Age', '3600');
-    return res.status(204).send('');
+    return res.status(200).end();
   }
 
-  // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Validate required fields
   const { name, email, phone, subject, message } = req.body;
 
+  // Validate required fields
   if (!name || !email || !subject || !message) {
     return res.status(400).json({
       error: 'Missing required fields: name, email, subject, and message are required.'
@@ -42,15 +35,15 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: functions.config().email.user, // Your Gmail address
-      pass: functions.config().email.password // Your Google App Password
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD
     }
   });
 
   // Create email content
   const mailOptions = {
-    from: functions.config().email.user,
-    to: 'info@pathtofreedomcoaching.com', // Your receiving email
+    from: process.env.EMAIL_USER,
+    to: 'info@pathtofreedomcoaching.com',
     replyTo: email,
     subject: `Contact Form: ${subject}`,
     html: `
@@ -81,7 +74,7 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
 
   // Send confirmation email to the user
   const confirmationMailOptions = {
-    from: functions.config().email.user,
+    from: process.env.EMAIL_USER,
     to: email,
     subject: 'Thank you for contacting Path to Freedom Coaching',
     html: `
@@ -120,13 +113,8 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
 
   try {
     // Send both emails
-    console.log('Attempting to send notification email to:', mailOptions.to);
     await transporter.sendMail(mailOptions);
-    console.log('Notification email sent successfully');
-
-    console.log('Attempting to send confirmation email to:', email);
     await transporter.sendMail(confirmationMailOptions);
-    console.log('Confirmation email sent successfully');
 
     return res.status(200).json({
       success: true,
@@ -134,14 +122,8 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
     });
   } catch (error) {
     console.error('Error sending email:', error);
-    console.error('Error details:', {
-      code: error.code,
-      command: error.command,
-      response: error.response,
-      responseCode: error.responseCode
-    });
     return res.status(500).json({
       error: `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedomcoaching.com`
     });
   }
-});
+};

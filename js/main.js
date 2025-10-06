@@ -112,9 +112,20 @@ function validateForm(formId) {
             submitButton.textContent = 'Sending...';
 
             try {
-                // Call Firebase Callable Function
-                const sendEmail = firebase.functions().httpsCallable('sendContactEmail');
-                const result = await sendEmail(formData);
+                // Call the HTTP Cloud Function
+                const response = await fetch('/api/sendContactEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || 'Unknown error');
+                }
 
                 // Success
                 alert('Thank you for your message! We have sent you a confirmation email and will respond within 24 hours.');

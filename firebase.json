@@ -6,6 +6,12 @@
       "**/.*",
       "**/node_modules/**",
       "functions/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/sendContactEmail",
+        "function": "sendContactEmail"
+      }
     ]
   },
   "functions": [
