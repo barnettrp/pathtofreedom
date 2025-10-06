@@ -112,24 +112,13 @@ function validateForm(formId) {
             submitButton.textContent = 'Sending...';
 
             try {
-                // Call Firebase Cloud Function via HTTP
-                const response = await fetch('https://us-central1-pathtofreedom-site.cloudfunctions.net/sendContactEmail', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
+                // Call Firebase Callable Function
+                const sendEmail = firebase.functions().httpsCallable('sendContactEmail');
+                const result = await sendEmail(formData);
 
-                const result = await response.json();
-
-                if (response.ok) {
-                    // Success
-                    alert('Thank you for your message! We have sent you a confirmation email and will respond within 24 hours.');
-                    form.reset();
-                } else {
-                    throw new Error(result.error || 'Unknown error occurred');
-                }
+                // Success
+                alert('Thank you for your message! We have sent you a confirmation email and will respond within 24 hours.');
+                form.reset();
             } catch (error) {
                 console.error('Error sending message:', error);
                 // Show detailed error message

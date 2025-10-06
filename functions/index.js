@@ -4,25 +4,29 @@ const nodemailer = require('nodemailer');
 
 admin.initializeApp();
 
-// Cloud Function to send contact form emails
-exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
-  // Enable CORS
-  res.set('Access-Control-Allow-Origin', '*');
+// Cloud Function to send contact form emails (using callable function)
+exports.sendContactEmail = functions.https.onCall(async (data, context) => {
+  // Note: Callable functions automatically handle CORS and work without authentication
+  // You can optionally check context.auth if you want to restrict to authenticated users
 
-  if (req.method === 'OPTIONS') {
-    res.set('Access-Control-Allow-Methods', 'POST');
-    res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.set('Access-Control-Max-Age', '3600');
-    return res.status(204).send('');
+  // Validate required fields
+  const { name, email, phone, subject, message } = data;
+
+  if (!name || !email || !subject || !message) {
+    throw new functions.https.HttpsError(
+      'invalid-argument',
+      'Missing required fields: name, email, subject, and message are required.'
+    );
   }
 
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    throw new functions.https.HttpsError(
+      'invalid-argument',
+      'Invalid email address format.'
+    );
   }
-
-  // Note: Authentication removed for public contact form
-  // If you want to add rate limiting, consider using reCAPTCHA or Firebase App Check
 
   // Configure the email transporter using Gmail and App Password
   const transporter = nodemailer.createTransport({
@@ -32,23 +36,6 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
       pass: functions.config().email.password // Your Google App Password
     }
   });
-
-  // Validate required fields
-  const { name, email, phone, subject, message } = req.body;
-
-  if (!name || !email || !subject || !message) {
-    return res.status(400).json({
-      error: 'Missing required fields: name, email, subject, and message are required.'
-    });
-  }
-
-  // Validate email format
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({
-      error: 'Invalid email address format.'
-    });
-  }
 
   // Create email content
   const mailOptions = {
@@ -131,7 +118,7 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
     await transporter.sendMail(confirmationMailOptions);
     console.log('Confirmation email sent successfully');
 
-    return res.status(200).json({ success: true, message: 'Emails sent successfully' });
+    return { success: true, message: 'Emails sent successfully' };
   } catch (error) {
     console.error('Error sending email:', error);
     console.error('Error details:', {
@@ -140,9 +127,9 @@ exports.sendContactEmail = functions.https.onRequest(async (req, res) => {
       response: error.response,
       responseCode: error.responseCode
     });
-    return res.status(500).json({
-      error: `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedomcoaching.com`,
-      details: { originalError: error.message, code: error.code }
-    });
+    throw new functions.https.HttpsError(
+      'internal',
+      `Unable to send email: ${error.message}. Please contact us directly at info@pathtofreedomcoaching.com`
+    );
   }
 });
