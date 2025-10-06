@@ -69,13 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function validateForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
+
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
+
         let isValid = true;
         const requiredFields = form.querySelectorAll('[required]');
-        
+
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
                 isValid = false;
@@ -84,7 +84,7 @@ function validateForm(formId) {
                 field.classList.remove('error');
             }
         });
-        
+
         // Email validation
         const emailField = form.querySelector('input[type="email"]');
         if (emailField && emailField.value) {
@@ -94,11 +94,48 @@ function validateForm(formId) {
                 emailField.classList.add('error');
             }
         }
-        
+
         if (isValid) {
-            // Here you would normally send the form data to your backend
-            alert('Thank you for your message. We will get back to you soon!');
-            form.reset();
+            // Get form data
+            const formData = {
+                name: form.querySelector('#name').value,
+                email: form.querySelector('#email').value,
+                phone: form.querySelector('#phone').value || '',
+                subject: form.querySelector('#subject').value,
+                message: form.querySelector('#message').value
+            };
+
+            // Disable submit button and show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                // Call Firebase Cloud Function
+                const sendContactEmail = firebase.functions().httpsCallable('sendContactEmail');
+                const result = await sendContactEmail(formData);
+
+                // Success
+                alert('Thank you for your message! We have sent you a confirmation email and will respond within 24 hours.');
+                form.reset();
+            } catch (error) {
+                console.error('Error sending message:', error);
+                // Show detailed error message
+                let errorMessage = 'There was an error sending your message.\n\n';
+                errorMessage += 'Error details:\n';
+                errorMessage += 'Code: ' + (error.code || 'unknown') + '\n';
+                errorMessage += 'Message: ' + (error.message || 'unknown') + '\n';
+                if (error.details) {
+                    errorMessage += 'Details: ' + JSON.stringify(error.details) + '\n';
+                }
+                errorMessage += '\nPlease email us directly at info@pathtofreedomcoaching.com';
+                alert(errorMessage);
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
         } else {
             alert('Please fill in all required fields correctly.');
         }
