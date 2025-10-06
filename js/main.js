@@ -112,23 +112,35 @@ function validateForm(formId) {
             submitButton.textContent = 'Sending...';
 
             try {
-                // Call Firebase Cloud Function
-                const sendContactEmail = firebase.functions().httpsCallable('sendContactEmail');
-                const result = await sendContactEmail(formData);
+                // Sign in anonymously to get auth token
+                await firebase.auth().signInAnonymously();
+                const user = firebase.auth().currentUser;
+                const token = await user.getIdToken();
 
-                // Success
-                alert('Thank you for your message! We have sent you a confirmation email and will respond within 24 hours.');
-                form.reset();
+                // Call Firebase Cloud Function via HTTP with auth token
+                const response = await fetch('https://us-central1-pathtofreedom-site.cloudfunctions.net/sendContactEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Success
+                    alert('Thank you for your message! We have sent you a confirmation email and will respond within 24 hours.');
+                    form.reset();
+                } else {
+                    throw new Error(result.error || 'Unknown error occurred');
+                }
             } catch (error) {
                 console.error('Error sending message:', error);
                 // Show detailed error message
                 let errorMessage = 'There was an error sending your message.\n\n';
-                errorMessage += 'Error details:\n';
-                errorMessage += 'Code: ' + (error.code || 'unknown') + '\n';
-                errorMessage += 'Message: ' + (error.message || 'unknown') + '\n';
-                if (error.details) {
-                    errorMessage += 'Details: ' + JSON.stringify(error.details) + '\n';
-                }
+                errorMessage += 'Error: ' + (error.message || 'unknown') + '\n';
                 errorMessage += '\nPlease email us directly at info@pathtofreedomcoaching.com';
                 alert(errorMessage);
             } finally {
