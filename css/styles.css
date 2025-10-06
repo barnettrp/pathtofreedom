@@ -450,6 +450,20 @@ section {
     gap: var(--spacing-lg);
 }
 
+/* Force 4 columns on desktop for Our Approach section */
+@media (min-width: 1024px) {
+    .values-section .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 2 columns on tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .values-section .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .value-card {
     background-color: var(--white);
     padding: var(--spacing-lg);
