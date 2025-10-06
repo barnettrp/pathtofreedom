@@ -458,6 +458,9 @@ section {
     transition: var(--transition);
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .value-card:hover {
