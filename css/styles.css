@@ -469,26 +469,27 @@ section {
     gap: var(--spacing-lg);
 }
 
-/* Responsive grid layouts for different sections */
+/* Responsive grid layouts - consistent 3 columns on desktop */
 
-/* Desktop (1024px+) - force specific column counts based on section */
+/* Desktop (1024px+) - 3 columns for all grids except specified sections */
 @media (min-width: 1024px) {
-    /* 4 columns for sections with 4, 8, or 12 items */
+    .values-grid,
+    .contact-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Keep 4 columns only for home page sections with exactly 4 items */
     .values-section .values-grid,
     .how-it-works .steps-grid {
         grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* 3 columns for sections with 3, 6, or 9 items */
-    body:not(.values-section):not(.how-it-works) .values-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Tablet (768px - 1023px) - 2 columns */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .values-section .values-grid,
-    .how-it-works .steps-grid {
+    .values-grid,
+    .steps-grid,
+    .contact-info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1163,14 +1164,6 @@ section {
     margin-top: var(--spacing-lg);
 }
 
-/* Force 3 columns on desktop for contact info */
-@media (min-width: 1024px) {
-    .contact-info-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Contact info card equal heights */
 .contact-info-card {
     display: flex;
     flex-direction: column;
