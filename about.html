@@ -10,11 +10,9 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="nav-container">
             <div class="nav-brand">
-                <a href="index.html">
-                    <span class="nav-brand-text">Path to Freedom</span>
-                </a>
+                <span class="brand-text">Path to Freedom</span>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span>
@@ -26,20 +24,19 @@
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="app.html">Recovery App</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html#schedule" class="btn-primary">Schedule Session</a></li>
+                <li><a href="app.html">Blog</a></li>
+                <li><a href="index.html#schedule" class="btn-schedule">Schedule Session</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-logo">
-                <img src="images/pathtofreedomlogo.jpg" alt="Path to Freedom Logo" class="hero-logo-img">
-            </div>
+        <div class="hero-image-container">
+            <img src="images/sunrise-mountains.jpg" alt="Sunrise over mountains" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
             <h1>About Path to Freedom</h1>
             <p class="hero-subtitle">Grace-based coaching rooted in truth, compassion, and transformation</p>
         </div>
@@ -49,7 +46,7 @@
     <section class="intro-section">
         <div class="container">
             <h2 class="section-title">My Story</h2>
-            <h3 class="section-subtitle">A Journey of Grace and Freedom</h3>
+            <h3 style="text-align: center; color: var(--text-medium); margin-bottom: 2.5rem; font-size: 1.25rem;">A Journey of Grace and Freedom</h3>
             <div class="intro-grid">
                 <div class="intro-text">
                     <p>For years, I lived a double life, viewing pornography and lying to cover it up. I thought I could stop on my own, that if I just tried harder, I'd break free. But the cycle of shame, secrecy, and isolation only deepened. When my wife discovered the truth, I thought I would lose my marriage. That moment became my breaking and turning point. I realized I couldn't do this alone.</p>
@@ -68,7 +65,7 @@
         <div class="container">
             <h2 class="section-title">The Grace Model</h2>
             <p class="section-subtitle">My approach is grounded in the grace model of recovery, which recognizes that lasting change comes through God's love, not shame or behavior modification alone.</p>
-            
+
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">❤️</div>
@@ -95,7 +92,7 @@
     </section>
 
     <!-- What Makes This Different -->
-    <section class="values-section">
+    <section class="values-section" style="background-color: var(--cream);">
         <div class="container">
             <h2 class="section-title">What Makes This Different</h2>
             <div class="values-grid">
@@ -133,6 +130,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/pathtofreedomlogo.jpg" alt="Path to Freedom Logo" class="footer-logo-img">
+                    </div>
                     <h4>Path to Freedom Coaching</h4>
                     <p>Personal coaching practice offering grace-based, Christ-centered guidance for men seeking freedom from porn and sexual addiction.</p>
                 </div>
