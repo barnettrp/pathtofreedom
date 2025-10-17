@@ -186,25 +186,3 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeRecoveryApp();
     }
 });
-
-// Newsletter signup helper
-function handleNewsletterSignup(formId) {
-    const form = document.getElementById(formId);
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = form.querySelector('input[type="email"]').value;
-        
-        if (email) {
-            // Here you would integrate with your email service provider
-            alert('Thank you for subscribing! Check your email for confirmation.');
-            form.reset();
-        }
-    });
-}
-
-// Initialize newsletter form if it exists
-if (document.getElementById('newsletterForm')) {
-    handleNewsletterSignup('newsletterForm');
-}

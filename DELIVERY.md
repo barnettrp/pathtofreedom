@@ -82,7 +82,7 @@ A complete, professional website for **Path to Freedom Coaching LLC** - a Christ
 ## 🔌 Integrations Status
 
 ### Ready to Configure:
-1. **Calendly** - Widget embedded, needs scheduling link
+1. **CoachVantage** - Booking links integrated, ready to use
 2. **Stripe** - Payment structure ready, needs API keys
 3. **Contact Form** - Form built, needs backend (Formspree/Netlify/FormSubmit)
 4. **Recovery App** - Integration section ready for connection
@@ -109,7 +109,7 @@ A complete, professional website for **Path to Freedom Coaching LLC** - a Christ
 
 ### Immediate (15-30 minutes):
 1. Deploy to GitHub Pages or Netlify
-2. Add Calendly scheduling link
+2. Verify CoachVantage booking links are working
 3. Test on mobile device
 
 ### Within First Week:
@@ -124,7 +124,7 @@ A complete, professional website for **Path to Freedom Coaching LLC** - a Christ
 
 ### Ongoing:
 9. Monitor form submissions
-10. Track Calendly bookings
+10. Track CoachVantage bookings
 11. Update testimonials (anonymized)
 12. Add blog/resources as needed
 
@@ -237,6 +237,78 @@ All that's left is to:
 2. Configure integrations (30 minutes)
 3. Customize content (30 minutes)
 4. Start helping people find freedom! 🙏
+
+---
+
+## 🔄 Recent Updates (October 2024)
+
+### Design Improvements
+- **Hero Banner Optimization**: Removed rounded bottom corners from all hero banners for a cleaner, more symmetrical appearance across all pages
+- **Hero Image Diversity**: Updated hero images across all pages to use unique, serene nature photography while maintaining visual consistency with the healing/nature theme
+
+### Hero Image Distribution
+- **Homepage (index.html)**: mountain-path.jpg - Main landing page with welcoming path imagery
+- **Services (services.html)**: sunrise-mountains.jpg - New beginnings symbolism
+- **About (about.html)**: IMG_0089.jpeg - Serene natural landscape
+- **Resources (resources.html)**: IMG_0090.jpeg - Nature path suggesting forward movement
+- **Contact (contact.html)**: IMG_0091.jpeg - Welcoming mountain vista
+- **Privacy (privacy.html)**: IMG_0092.jpeg - Protected natural sanctuary
+- **Terms (terms.html)**: IMG_0093.jpeg - Clear mountain vista
+- **App (app.html)**: app-mockup.jpg - Product showcase (unchanged)
+
+### Content Improvements
+- **Legal Pages**: Converted bullet-point lists to flowing paragraph format for better readability on Privacy Policy and Terms of Service pages
+- **Navigation Consistency**: Standardized navigation structure across all pages, including privacy and terms pages
+- **Schedule Session Button**: Updated all "Schedule Session" buttons site-wide to point directly to services.html#coaching-programs section for improved user flow
+
+### Technical Notes
+- All hero images maintain the nature-inspired healing theme
+- Each page now has a unique hero image (no duplicates)
+- Improved visual hierarchy and professional appearance
+- Consistent navigation structure across all pages
+
+---
+
+## 🔄 Additional Updates (October 17, 2024)
+
+### User Experience Improvements
+- **"View All Services" Button**: Updated homepage button to link directly to services.html#coaching-programs for immediate access to coaching offerings
+- **Session Duration**: Changed coaching session length from 60 minutes to 50 minutes in Services FAQ
+- **Hero Title Personalization**: Changed Services page hero from "Our Services" to "My Services" for more personal connection
+
+### Resources Page Redesign
+- **Book Display Format**: Converted "Recommended Books" from list format to modern card grid layout matching website design system
+  - Added 📚 book emoji icons for visual consistency
+  - Shortened book titles for cleaner appearance
+  - Separated author names with lighter styling
+  - Implemented 3-column responsive grid (matches Websites and Podcasts sections)
+- **Crisis Resources Centering**: Centered Crisis & Emergency Resources section with flexbox layout for better visual balance
+- **Removed Sections**:
+  - Removed "Free Tools & Exercises" section (placeholder content)
+  - Removed "Stay Connected" newsletter signup section (non-functional placeholder)
+
+### Footer Enhancements
+- **Crisis Support Link**: Converted footer "Resources" > "Crisis Support" text to clickable link directing to resources.html#crisis-resources
+- **Footer Simplification**: Removed "National Suicide Prevention Lifeline: 988" line from footer (full crisis info available via Crisis Support link)
+- **Removed Colon**: Changed "Crisis Support:" to "Crisis Support" for cleaner link appearance
+- Applied changes across all 8 HTML pages for consistency
+
+### Technical Implementation
+- Added `id="crisis-resources"` to Crisis & Emergency Resources section for anchor linking
+- Maintained responsive design across all new card layouts
+- Ensured consistent styling with existing design system
+- All changes tested and verified across pages
+
+### Files Modified in This Session
+1. index.html - View All Services button, footer updates
+2. about.html - Footer updates
+3. services.html - Session duration, hero title, footer updates
+4. resources.html - Book cards, crisis centering, section removals, footer updates
+5. app.html - Footer updates
+6. contact.html - Footer updates
+7. privacy.html - Footer updates
+8. terms.html - Footer updates
+9. DELIVERY.md - Documentation updates
 
 ---
 

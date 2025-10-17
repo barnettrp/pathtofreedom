@@ -7,8 +7,8 @@ Website development for Path to Freedom Coaching LLC - A grace-based Christian c
 This website provides a complete online presence for a Christian coaching practice, featuring:
 - Modern, masculine but calming design
 - Grace-based approach highlighting influences like Sathiya Sam, Mark Laazer, The Cure, Nick Stumbo, Drew Boa, and Jay Stringer
-- Integrated scheduling via Calendly
-- Payment processing via Stripe
+- Integrated scheduling via CoachVantage
+- Payment processing via Stripe and CoachVantage
 - Recovery app integration section
 - Mobile-responsive design
 
@@ -55,13 +55,13 @@ This website provides a complete online presence for a Christian coaching practi
 ### 1. Basic Setup
 Simply upload all files to your web hosting service maintaining the folder structure.
 
-### 2. Calendly Integration
-1. Sign up at [Calendly.com](https://calendly.com)
-2. Create your scheduling page
-3. In `index.html`, replace the Calendly URL:
-   ```html
-   <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-LINK-HERE">
-   ```
+### 2. CoachVantage Integration
+1. Set up your CoachVantage account at [coachvantage.com](https://coachvantage.com)
+2. Create your coaching programs and events
+3. Update the CoachVantage links in your HTML files:
+   - Free consultation link in `index.html` and `services.html`
+   - Individual session booking link in `services.html`
+   - 4-session package link in `services.html`
 
 ### 3. Stripe Payment Integration
 1. Create a Stripe account at [stripe.com](https://stripe.com)

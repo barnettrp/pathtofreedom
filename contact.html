@@ -12,6 +12,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
+                <img src="images/pathtofreedomlogo.jpg" alt="Path to Freedom Logo" class="nav-logo">
                 <span class="brand-text">Path to Freedom</span>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -24,8 +25,9 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="app.html">Blog</a></li>
-                <li><a href="index.html#schedule" class="btn-schedule">Schedule Session</a></li>
+                <li><a href="app.html">Recovery App</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="services.html#coaching-programs" class="btn-schedule">Schedule Session</a></li>
             </ul>
         </div>
     </nav>
@@ -33,7 +35,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-image-container">
-            <img src="images/mountain-path.jpg" alt="Welcoming path through nature" class="hero-bg-image">
+            <img src="images/IMG_0091.jpeg" alt="Welcoming mountain sunrise" class="hero-bg-image">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -44,72 +46,66 @@
 
     <!-- Contact Form Section -->
     <section class="intro-section">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-text">
-                    <h2>Send Me a Message</h2>
-                    <p>Have questions about my coaching services, the recovery app, or anything else? I'd love to hear from you.</p>
-                    <p>All inquiries are confidential, and I typically respond within 24 hours.</p>
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Send Me a Message</h2>
+            <p class="section-subtitle">Have questions about my coaching services, the recovery app, or anything else? I'd love to hear from you.</p>
+            <p class="section-subtitle">All inquiries are confidential, and I typically respond within 24 hours.</p>
 
-                    <div class="contact-info-grid">
-                        <div class="contact-info-card">
-                            <h3>📧 Email</h3>
-                            <p>info@pathtofreedom.coach</p>
-                        </div>
-
-                        <div class="contact-info-card">
-                            <h3>🕐 Response Time</h3>
-                            <p>Within 24 hours</p>
-                        </div>
-
-                        <div class="contact-info-card">
-                            <h3>🔒 Confidential</h3>
-                            <p>All communications are private</p>
-                        </div>
-                    </div>
+            <div class="contact-info-grid" style="margin-bottom: var(--spacing-xl);">
+                <div class="contact-info-card">
+                    <h3>📧 Email</h3>
+                    <p>info@pathtofreedom.coach</p>
                 </div>
 
-                <div class="intro-image">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
+                <div class="contact-info-card">
+                    <h3>🕐 Response Time</h3>
+                    <p>Within 24 hours</p>
+                </div>
 
-                        <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject...</option>
-                                <option value="consultation">Schedule Free Consultation</option>
-                                <option value="coaching">Coaching Services Question</option>
-                                <option value="app">Recovery App Question</option>
-                                <option value="payment">Payment/Pricing Question</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                            <p class="helper-text">Please share any questions or information that would be helpful for us to know.</p>
-                        </div>
-
-                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-
-                        <p class="helper-text text-center">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
-                    </form>
+                <div class="contact-info-card">
+                    <h3>🔒 Confidential</h3>
+                    <p>All communications are private</p>
                 </div>
             </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject...</option>
+                        <option value="consultation">Schedule Free Consultation</option>
+                        <option value="coaching">Coaching Services Question</option>
+                        <option value="app">Recovery App Question</option>
+                        <option value="payment">Payment/Pricing Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <p class="helper-text">Please share any questions or information that would be helpful for us to know.</p>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+
+                <p class="helper-text text-center">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+            </form>
         </div>
     </section>
 
@@ -193,7 +189,7 @@
         <div class="container">
             <h2>Prefer to Schedule Directly?</h2>
             <p>Skip the form and book your free consultation right now</p>
-            <a href="index.html#schedule" class="btn-primary btn-large">Schedule Free Consultation</a>
+            <a href="https://pathtofreedom.coachvantage.com/event/free-discovery-call" class="btn-primary btn-large" target="_blank">Schedule Free Consultation</a>
         </div>
     </section>
 
@@ -228,8 +224,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
-                    <p>Crisis Support:</p>
-                    <p>National Suicide Prevention Lifeline: 988</p>
+                    <p><a href="resources.html#crisis-resources">Crisis Support</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -237,27 +232,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-functions-compat.js"></script>
-
-    <!-- Firebase Configuration -->
-    <script>
-        // Firebase project configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBLJlX9AsEN1Fb2Y75oCMD2QKE5KvtmmU4",
-            authDomain: "pathtofreedom-site.firebaseapp.com",
-            projectId: "pathtofreedom-site",
-            storageBucket: "pathtofreedom-site.firebasestorage.app",
-            messagingSenderId: "633851301461",
-            appId: "1:633851301461:web:cad0f786392cc9c94a0edc"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
 
     <script src="js/main.js"></script>
 </body>

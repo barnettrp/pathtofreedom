@@ -4,6 +4,24 @@
 
 This guide will help you deploy and configure your Path to Freedom Coaching website.
 
+## Local Development Server
+
+### Starting a Test Server
+When testing the website locally, browser caching can cause issues with seeing updates. To avoid this:
+
+1. **Always use a different port** each time you start the server to bypass cache issues
+2. Kill any existing server first
+3. Start a new server on a different port:
+   ```bash
+   python3 -m http.server 8080
+   # Next time use: python3 -m http.server 8081
+   # Or: python3 -m http.server 3000
+   ```
+
+**Common ports to rotate through:** 3000, 8000, 8080, 8081, 5000
+
+This ensures you always see the latest changes without browser caching problems.
+
 ## Step 1: Choose a Hosting Provider
 
 ### Recommended Free Options:
@@ -27,17 +45,17 @@ This guide will help you deploy and configure your Path to Freedom Coaching webs
    - Import GitHub repository
    - Automatic deployment
 
-## Step 2: Configure Calendly
+## Step 2: Configure CoachVantage
 
-1. Create a free account at [Calendly.com](https://calendly.com)
-2. Set up your availability
-3. Create an event type for "Free 30-Minute Consultation"
-4. Copy your scheduling link
-5. In `index.html`, find line with Calendly widget and replace:
-   ```html
-   <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-LINK-HERE">
-   ```
-   Change `YOUR-LINK-HERE` to your actual Calendly username/event
+1. Set up your account at [CoachVantage](https://coachvantage.com)
+2. Create your coaching programs and event types:
+   - Free Discovery Call (30 minutes)
+   - Individual Coaching Session (50 minutes)
+   - 4-Session Package
+3. Get your booking links from CoachVantage
+4. Update the links in your HTML files:
+   - `index.html` - Free consultation button
+   - `services.html` - All three service options
 
 ## Step 3: Set Up Stripe Payments
 
@@ -142,7 +160,7 @@ When your recovery app is ready:
 Before going live, test:
 - [ ] All navigation links work
 - [ ] Mobile menu opens and closes
-- [ ] Calendly widget loads (after adding your link)
+- [ ] CoachVantage booking links work correctly
 - [ ] Contact form submits successfully
 - [ ] Stripe payment buttons work (in test mode first)
 - [ ] All pages display correctly on mobile
@@ -169,7 +187,7 @@ Before going live, test:
 
 1. Purchase a domain name (e.g., pathtofreedomcoaching.com)
 2. Connect to your hosting provider
-3. Update Stripe and Calendly settings with new domain
+3. Update Stripe and CoachVantage settings with new domain
 
 ## Common Customizations
 
@@ -212,4 +230,4 @@ Replace the placeholder testimonials with real ones (anonymized for privacy).
 
 **Your website is ready to launch! 🎉**
 
-Focus on getting Calendly and Stripe configured first, as those are your primary conversion tools. Everything else can be refined after launch.
+Focus on getting CoachVantage and Stripe configured first, as those are your primary conversion tools. Everything else can be refined after launch.

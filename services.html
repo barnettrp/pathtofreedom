@@ -13,6 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
+                <img src="images/pathtofreedomlogo.jpg" alt="Path to Freedom Logo" class="nav-logo">
                 <span class="brand-text">Path to Freedom</span>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -25,8 +26,9 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="app.html">Blog</a></li>
-                <li><a href="index.html#schedule" class="btn-schedule">Schedule Session</a></li>
+                <li><a href="app.html">Recovery App</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html#coaching-programs" class="btn-schedule">Schedule Session</a></li>
             </ul>
         </div>
     </nav>
@@ -34,25 +36,17 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-image-container">
-            <img src="images/mountain-path.jpg" alt="Mountain path leading upward" class="hero-bg-image">
+            <img src="images/sunrise-mountains.jpg" alt="Sunrise over mountains symbolizing new beginnings" class="hero-bg-image">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1>Our Services</h1>
-            <p class="hero-subtitle">Personalized coaching to guide you on your journey to freedom</p>
-        </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="intro-section">
-        <div class="container">
-            <h2 class="section-title">How I Can Help</h2>
-            <p class="section-subtitle">Every journey is unique. I offer personalized coaching tailored to your specific needs and goals.</p>
+            <h1>My Services</h1>
+            <p class="hero-subtitle">Every journey is unique. I offer personalized coaching tailored to your specific needs and goals.</p>
         </div>
     </section>
 
     <!-- Coaching Services -->
-    <section class="values-section">
+    <section class="values-section" id="coaching-programs">
         <div class="container">
             <h2 class="section-title">Coaching Programs</h2>
             <div class="pricing-grid">
@@ -69,7 +63,7 @@
                         <li>✓ Explore if we're a good fit</li>
                         <li>✓ No pressure or obligation</li>
                     </ul>
-                    <a href="index.html#schedule" class="btn-primary">Schedule Now</a>
+                    <a href="https://pathtofreedom.coachvantage.com/event/free-discovery-call" class="btn-primary" target="_blank">Schedule Now</a>
                 </div>
 
                 <!-- Individual Coaching -->
@@ -88,33 +82,25 @@
                         <li>✓ Email support between sessions</li>
                         <li>✓ Access to recovery app</li>
                     </ul>
-                    <stripe-buy-button
-                      buy-button-id="buy_btn_1SENnARpBO7AhAVgCYk7N4vV"
-                      publishable-key="pk_live_51SEKFsRpBO7AhAVgCDViuDDXbsj2EZsAND5d7qOje63TT7uCHbqg32jazIlubyJSJBVlzGEPxrLGPVUoS5NYmt6Q00rAA5j299"
-                    >
-                    </stripe-buy-button>
+                    <a href="https://pathtofreedom.coachvantage.com/event/coaching-session-(50-minutes)" class="btn-primary" target="_blank">Schedule Session</a>
                 </div>
 
                 <!-- Monthly Package -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Monthly Package</h3>
+                        <h3>4-Session Package</h3>
                         <div class="price">$300</div>
-                        <p class="price-description">4 sessions per month</p>
+                        <p class="price-description">4 sessions package</p>
                     </div>
                     <ul class="pricing-features">
-                        <li>✓ Weekly 60-minute sessions</li>
+                        <li>✓ Four 60-minute sessions</li>
                         <li>✓ All Individual Coaching benefits</li>
                         <li>✓ Priority scheduling</li>
                         <li>✓ Unlimited email support</li>
                         <li>✓ Premium recovery app access</li>
-                        <li>✓ Save $60 per month</li>
+                        <li>✓ Save $60 per package</li>
                     </ul>
-                    <stripe-buy-button
-                      buy-button-id="buy_btn_1SENkRRpBO7AhAVgDizB8eJv"
-                      publishable-key="pk_live_51SEKFsRpBO7AhAVgCDViuDDXbsj2EZsAND5d7qOje63TT7uCHbqg32jazIlubyJSJBVlzGEPxrLGPVUoS5NYmt6Q00rAA5j299"
-                    >
-                    </stripe-buy-button>
+                    <a href="https://pathtofreedom.coachvantage.com/coaching-program/path-to-freedom-coaching-program-(4-session-package)" class="btn-primary" target="_blank">Purchase Package</a>
                 </div>
             </div>
         </div>
@@ -190,7 +176,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>How long is each coaching session?</h3>
-                    <p>Standard sessions are 60 minutes. The free consultation is 30 minutes.</p>
+                    <p>Standard sessions are 50 minutes. The free consultation is 30 minutes.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Are sessions conducted online or in-person?</h3>
@@ -221,7 +207,7 @@
         <div class="container">
             <h2>Ready to Take the First Step?</h2>
             <p>Schedule your free consultation today - no obligation, just conversation</p>
-            <a href="index.html#schedule" class="btn-primary btn-large">Schedule Free Consultation</a>
+            <a href="https://pathtofreedom.coachvantage.com/event/free-discovery-call" class="btn-primary btn-large" target="_blank">Schedule Free Consultation</a>
         </div>
     </section>
 
@@ -256,8 +242,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
-                    <p>Crisis Support:</p>
-                    <p>National Suicide Prevention Lifeline: 988</p>
+                    <p><a href="resources.html#crisis-resources">Crisis Support</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
