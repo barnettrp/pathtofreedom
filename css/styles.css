@@ -478,6 +478,7 @@ img {
 
 @media (max-width: 768px) {
     .nav-container {
+        position: relative;
         padding: 0 1.5rem;
     }
 
